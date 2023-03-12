@@ -20,9 +20,8 @@ console.log('This is the second value in Supply Changes:', supplyChanges[1]);
 // 4. The last item was added by mistake. Remove it from the 'supplyChanges' 
 //    array & console.log the value removed.
 console.log('4. Removed item:');
-supplyChanges.pop();
-console.log('Removed item, Supply Changes is now:', supplyChanges);
-console.log('The value removed from Supply Changes was:', 11);
+console.log(supplyChanges.pop());
+console.log('New Supply Changes list is:', supplyChanges);
 
 // 5. A delivery of 25 more parts arrived. Add the value 25 to the end of the array
 console.log('5. Adding 25 to supplyChanges.');
@@ -35,7 +34,15 @@ console.log('Supply Changes has been updated and is now:', supplyChanges);
 //    - if the value is 0, log 'No Change.'
 //    - if the value is negative, format the log as 'Removed x parts.' 
 console.log('6. Showing supplyChanges...');
-
+for(let i = 0; i < supplyChanges.length; i++){
+    console.log('Added', supplyChanges[i], 'parts.');
+    if(supplyChanges[i] === 0){
+        console.log('No Change.');
+    }
+    if(supplyChanges[i] < 0){
+        console.log('Removed', supplyChanges[i], 'parts.');
+    }
+}
 
 // STRETCH GOALS
 console.log('---  Stretch Goals  ---');
