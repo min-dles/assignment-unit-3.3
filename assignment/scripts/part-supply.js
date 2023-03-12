@@ -65,6 +65,17 @@ for(catalogue of supplyChanges){
 // 8. Write a loop to determine the total number of parts available by
 //    adding up all the numbers in the 'supplyChanges' array.
 console.log('8. Total supplies available is:');
+/* THOUGHTS: when approaching this problem, my first thought is to use a For loop (For as many values are in this
+array, calculate the total). Then I looked up how to calculate the sum, and found reduce(). This method is 
+very confusing to me at the moment, and fortunately there was more info about a For loop being an even faster
+way to do what reduce() does! This method also utilizes the operator "+=" which we previously learned, so I was
+glad to see familiar operators in this function. */
+
+let totalParts = 0;
+for(i = 0; i < supplyChanges.length; i++){
+    totalParts += supplyChanges[i];
+}
+console.log('Total supplies available is:', totalParts);
 
 // 9. We have a large stash of parts in our warehouse that we 
 //    need to box up and get ready for shipment. 
@@ -73,3 +84,5 @@ console.log('8. Total supplies available is:');
 //    no more boxes can be filled.
 //    Then log how many boxes were filled, and how many parts are left over.
 console.log('9. Filling boxes with a "while" loop');
+/* Currently, I'm reading Eloquent JavaScript and the first thing I thought of was the % remainder operator
+for this problem. Not sure if that is what I'll end up using, but those are my first thoughts. */
