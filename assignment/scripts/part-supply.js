@@ -86,3 +86,31 @@ console.log('Total supplies available is:', totalParts);
 console.log('9. Filling boxes with a "while" loop');
 /* Currently, I'm reading Eloquent JavaScript and the first thing I thought of was the % remainder operator
 for this problem. Not sure if that is what I'll end up using, but those are my first thoughts. */
+let parts = 0;
+const partsPerBox = 7;
+let fullBox = 0;
+let totalBoxes = fullBox;
+const maxParts = 572;
+/* At this point in thinking about solutions, I realized that a compound conditional might be useful to 
+check on the values of 1. Parts per box (max is 7) and/or 2. Total parts (572). Then I also remembered 
+from last week's stretch goal, ternary operators.
+
+while(parts < maxParts || parts <= fullBox){
+    parts++;
+}
+Trying this made me realize that maybe i should try a while loop WITHIN a while loop? To simultaneously
+calculate the parts per box, and boxes. Maybe compound conditional isn't quite what i need- */
+
+
+while((fullBox * 7) < maxParts){
+    if(parts <= partsPerBox){
+        parts++;
+    }else{
+        fullBox++;
+        parts = 0;
+        totalBoxes = fullBox - 1;
+    }
+}
+
+console.log('Total boxes filled:', totalBoxes);
+console.log('Parts remaining:', (maxParts - (totalBoxes * 7)));
